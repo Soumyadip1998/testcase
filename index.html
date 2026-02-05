@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yes or No</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: #4b2e2e;
+      background: linear-gradient(-45deg, #fceabb, #f8b500, #f6d365, #fda085);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    h1 {
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 2px #fff;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      margin: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+      position: relative;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    #yesBtn {
+      background-color: #6ab04c;
+      color: white;
+    }
+    #noBtn {
+      background-color: #eb4d4b;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1><b>Hi Taniya</b><br><b>Would you like to be BUBU of your DUDU for the rest of your life?</b><br><i>(only honest response accepted)</i></h1>
+  <button id="yesBtn">Yes</button>
+  <button id="noBtn">No</button>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+
+    // Place the No button initially
+    noBtn.style.left = "200px";
+    noBtn.style.top = "200px";
+
+    // Function to move the No button randomly
+    function moveNoButton() {
+      const x = Math.floor(Math.random() * (window.innerWidth - 120));
+      const y = Math.floor(Math.random() * (window.innerHeight - 120));
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    // When mouse hovers or finger touches the No button, move it
+    noBtn.addEventListener("mouseover", moveNoButton);
+    noBtn.addEventListener("touchstart", moveNoButton);
+
+    // Yes button redirects to thankyou.html
+    yesBtn.addEventListener("click", () => {
+      window.location.href = "thankyou.html";
+    });
+  </script>
+</body>
+</html>
