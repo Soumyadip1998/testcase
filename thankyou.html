@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Georgia', serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      /* Romantic animated gradient background */
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+      background-size: 400% 400%;
+      animation: romanticShift 20s ease infinite;
+    }
+    @keyframes romanticShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    }
+    p {
+      font-size: 1.5em;
+      margin-top: 20px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+    }
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      color: rgba(255,255,255,0.8);
+      font-size: 24px;
+      animation: floatUp 8s linear infinite;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Thank You ❤️</h1>
+    <p>You made the right choice and also made someone's entire life!</p>
+  </div>
+
+  <!-- Floating hearts -->
+  <div class="heart" style="left:10%; animation-delay:0s;">❤️</div>
+  <div class="heart" style="left:30%; animation-delay:2s;">💖</div>
+  <div class="heart" style="left:50%; animation-delay:4s;">💕</div>
+  <div class="heart" style="left:70%; animation-delay:6s;">💞</div>
+  <div class="heart" style="left:90%; animation-delay:8s;">💓</div>
+</body>
+</html>
